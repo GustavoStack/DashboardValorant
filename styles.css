@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "elo-rating statistics-overview statistics-overview"
+        "accuracy stats-breakdown stats-breakdown"
+        "weapons history history";
+}
+
+/* Definindo o estilo para cada uma das seções */
+section {
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+}
+
+.elo-rating {
+    grid-area: elo-rating;
+    background-color: #1b1e29;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.elo-rating h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #c2c5c9;
+}
+
+.elo-rating-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #222533;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.elo-rating-div img {
+    width: 50px; /* Tamanho da imagem (ícone) */
+    height: auto;
+    margin-right: 15px;
+}
+
+.rating-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-info p {
+    font-size: 1rem;
+    color: #c2c5c9;
+    margin: 0;
+}
+
+.rating-info h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #e0ac43; /* Cor dourada para o número de RR */
+}
+
+.statistics-overview {
+    grid-area: statistics-overview;
+    background-color: #1b1e29;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 200px;
+}
+
+.statistics-overview h3 {
+    color: #c2c5c9;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.stats-container-over {
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #222533;
+    border-radius: 8px;
+}
+
+.stat p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #c2c5c9;
+}
+
+.stat h4 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+    color: #fff; /* White color for the numbers */
+}
+
+.stat .change {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.stat .positive {
+    color: #4CAF50; /* Green for positive changes */
+}
+
+.stat .negative {
+    color: #FF5722; /* Red for negative changes */
+}
+
+.stats-breakdown {
+    grid-area: stats-breakdown;
+    background-color: #1b1e29;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stats-breakdown h3 {
+    color: #c2c5c9;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.stats-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.stat-item {
+    background-color: #282C34;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.history-item img{
+    max-width: 35px;
+}
+.stat-item p {
+    font-size: 0.8rem;
+    color: #c2c5c9;
+    margin: 0;
+}
+
+.stat-item h4 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+    color: white;
+}
+
+.history {
+    grid-area: history;
+    background-color: #1b1e29;
+    padding: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.history h3 {
+    color: #c2c5c9;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.history-item {
+    background-color: #282C34;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.history-item p {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+}
+
+.player-info img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.match-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.match-details p {
+    font-size: 1.3rem;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.match-details h4 {
+    font-size: 1.2rem;
+    color: #e0ac43;
+    margin: 0;
+}
+
+.match-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-result p {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.match-result span {
+    font-size: 0.9rem;
+    color: #05a20d;
+    margin-top: 5px;
+}
+.accuracy {
+    grid-area: accuracy;
+    background-color: #1b1e29;
+    padding: 20px;
+    display: flex; /* Deixa os elementos internos (imagem e estatísticas) lado a lado */
+    gap: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+}
+
+.accuracy h3 {
+    color: #c2c5c9;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.accuracy img {
+    max-width: 450px;
+    min-height: 300px;
+    max-height: 250px;
+    object-fit: cover; /* Mantém a proporção da imagem */
+    filter: drop-shadow(1px 1px 1px #4444dd);
+}
+
+.accuracy-container {
+    margin-top: 0; /* Remover margem superior para alinhamento adequado */
+    display: flex;
+    flex-direction: column; /* Coloca as estatísticas em coluna */
+    justify-content: space-between;
+    width: 100%;
+}
+
+.accuracy-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ajustar para 100% do container */
+}
+
+.accuracy-stat p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #c2c5c9;
+}
+
+.accuracy-stat h4 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+    color: #fff;
+}
+
+.accuracy-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.accuracy-bar.head {
+    background-color: #4CAF50; /* Verde para Headshot */
+    width: 55.7%; /* Largura proporcional à porcentagem */
+}
+
+.accuracy-bar.body {
+    background-color: #FFC107; /* Amarelo para Bodyshot */
+    width: 31.3%;
+}
+
+.accuracy-bar.legs {
+    background-color: #FF5722; /* Vermelho para Legshot */
+    width: 11.8%;
+}
+
+.weapons {
+    grid-area: weapons;
+    background-color: #1b1e29;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    max-height: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weapons h3 {
+    color: #c2c5c9;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.weapons-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.weapon-item {
+    background-color: #282C34;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weapon-item img{
+    max-width: 200px;
+}
+
+.weapon-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weapon-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weapon-stats p {
+    font-size: 0.8rem;
+    color: #c2c5c9;
+    margin: 0;
+}
+
+.weapon-stats h4 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: white;
+}
+@media screen and (max-width:900px){
+    .content{
+        grid-template-columns: repeat(2,2fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "elo-rating elo-rating"
+        "statistics-overview statistics-overview"
+        "accuracy accuracy"
+        "stats-breakdown stats-breakdown"
+        "weapons weapons"
+        "history history";
+    }
+}
+@media screen and (max-width: 520px) {
+    .content{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "elo-rating"
+        "statistics-overview"
+        "accuracy"
+        "stats-breakdown"
+        "weapons"
+        "history";
+    }
+}
